@@ -53,7 +53,8 @@ function App() {
   const [User, setUser] = useState({})
   const [Name, setName] = useState()
   const [friend1, setfriend1] = useState()
-  const [Lname, setLname] = useState([])
+  const [friend2, setfriend2] = useState()
+
   const data1 = []
   const addchange = (e) => {
     const { name, value } = e.target;
@@ -101,6 +102,7 @@ function App() {
     let fnfrinds = findFriend(Name.Name)
     setfriend1(fnfrinds)
     let lnfrinfd = findFriend(Name.Friend)
+    setfriend2(lnfrinfd)
     console.log('fnfrinds', fnfrinds)
     console.log('lnfrinfd', lnfrinfd)
     let comanfrnd = findCommonfrnd(fnfrinds, lnfrinfd)
@@ -180,7 +182,8 @@ function App() {
 
   <Button variant="contained" onClick={submite}>Find Relation</Button>
  
-
+ 
+  <TextField  id="standard-basic" name="Name" label="Relation" value={(friend1+friend2)? friend1+friend2 :""} variant="standard"  />
 
 </div>
     <TableContainer >
